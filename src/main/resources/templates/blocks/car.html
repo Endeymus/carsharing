@@ -1,0 +1,85 @@
+<form th:fragment="car_info" th:method="GET" th:action="@{/cars/redirect}" name="car" th:object="${car}">
+    <div class="row">
+        <span>
+            <input readonly th:field="*{model}" class="basic-slide" id="model" type="text" placeholder="Your best name">
+                <label for="model">Модель</label>
+        </span>
+        <span>
+            <input readonly class="basic-slide" th:field="*{number}" id="number" type="text"
+                   placeholder="Your best name">
+                <label for="number">Номер</label>
+        </span>
+    </div>
+    <div class="row">
+        <span>
+            <input readonly class="basic-slide" th:field="*{UUID}" id="UUID" type="text" placeholder="Your best name">
+                <label for="UUID">UUID</label>
+        </span>
+    </div>
+    <div class="row">
+        <span>
+            <input readonly class="basic-slide" th:field="*{latitude}" id="lat" type="text"
+                   placeholder="Your best name">
+                <label for="lat">lat</label>
+        </span>
+        <span>
+            <input readonly class="basic-slide" th:field="*{longitude}" id="lon" type="text"
+                   placeholder="Your best name">
+                <label for="lon">lon</label>
+        </span>
+    </div>
+    <div class="row">
+        <span>
+            <input readonly class="basic-slide" th:field="*{fuel}" id="fuel" type="text" placeholder="Your best name">
+                <label for="fuel">Топливо</label>
+        </span>
+    </div>
+    <div class="row">
+        <span>
+            <input readonly class="basic-slide" id="onRoad" th:field="*{onRoad}" type="text"
+                   placeholder="Your best name">
+                <label for="onRoad">Статус</label>
+        </span>
+    </div>
+    <div class="row">
+        <div id="container_btn">
+            <button class="learn-more" type="submit">
+                    <span class="circle" aria-hidden="true">
+                        <span class="icon arrow"></span>
+                    </span>
+                <span class="button-text">Отобразить на карте</span>
+            </button>
+        </div>
+    </div>
+</form>
+
+
+<form th:fragment="car_info_old" th:method="GET" th:action="@{/cars/redirect}" name="car" th:object="${car}">
+    <label for="model">Модель</label>
+    <input type="text" readonly name="model" id="model" th:field="*{model}">
+
+    <label for="number">Номер машины</label>
+    <input readonly type="text" name="number" id="number" th:field="*{number}">
+
+    <label for="UUID">Индентификационный номер</label>
+    <input readonly type="text" name="UUID" id="UUID" th:field="*{UUID}">
+
+    <label for="lat">Координаты</label>
+    <input readonly type="text" name="latitude" id="lat" th:field="*{latitude}">
+    <input readonly type="text" name="longitude" id="lon" th:field="*{longitude}">
+
+    <label for="fuel">Топливо</label>
+    <input readonly type="text" name="fuel" id="fuel" th:field="*{fuel}">
+
+    <label for="onRoad">Статус</label>
+    <input readonly type="text" name="onRoad" id="onRoad" th:value="${car.isOnRoad() == true ? 'В дороге' : 'Свободна'}">
+
+    <div id="container_btn">
+        <button class="learn-more" type="submit">
+                    <span class="circle" aria-hidden="true">
+                        <span class="icon arrow"></span>
+                    </span>
+            <span class="button-text">Отобразить на карте</span>
+        </button>
+    </div>
+</form>

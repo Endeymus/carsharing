@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Страница авторизации</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../static/css/form.css" th:href="@{/css/form.css}">
+</head>
+<body>
+<div class="registration">
+    <form th:method="POST" th:action="@{/login}">
+        <div class="container_reg">
+            <h1>Авторизация</h1>
+            <p>Пожалуйста, введите логин и пароль, чтобы войти</p>
+            <hr>
+
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Введите имя пользователя" id="username" name="username" required>
+
+            <label for="password"><b>Пароль</b></label>
+            <input type="password" placeholder="Введите Password" id="password" name="password" required>
+
+            <hr>
+
+
+            <button type="submit" class="registerbtn">Войти</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

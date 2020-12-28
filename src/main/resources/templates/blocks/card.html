@@ -1,0 +1,46 @@
+<div th:fragment="card_1" class="page-content">
+    <div th:each="car : ${cars}" class="card">
+        <div class="content">
+            <h2 class="title" th:text="'Номер : ' + ${car.getNumber()}"/>
+            <h2 class="title" th:text="'Марка : ' + ${car.getModel()}"/>
+            <p class="copy" th:text="'UUID : ' + ${car.getUUID()}"/>
+            <p class="copy" th:text="'Состояние : ' + ${car.isOnRoad() == true ? 'В дороге' : 'Свободна'}"/>
+            <form th:action="@{/cars/{UUID}(UUID = ${car.getUUID()})}" method="get" target="_blank">
+                <button class="btn" type="submit">Информация</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="card_2" class="artboard">
+    <div th:each="car : ${cars}" class="card">
+        <div class="card__side card__side--back">
+            <div class="card__cover">
+                <h4 class="card__heading">
+                    <span th:text="${car.getNumber()}" class="card__heading-span"></span>
+                </h4>
+            </div>
+            <div class="card__details">
+                <ul>
+                    <li th:text="'Марка : ' + ${car.getModel()}"/>
+                    <li th:text="'UUID : ' + ${car.getUUID()}"/>
+                    <li th:text="'Топливо : ' + ${car.getFuel()}"/>
+                    <li th:text="'Состояние : ' + ${car.isOnRoad() == true ? 'В дороге' : 'Свободна'}"/>
+                    <form th:action="@{/cars/{UUID}(UUID = ${car.getUUID()})}" method="get" target="_blank">
+                        <button class="btn" type="submit">Информация</button>
+                    </form>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card__side card__side--front">
+            <div class="card__theme">
+                <div class="card__theme-box">
+                    <p th:text="${car.getNumber()}" class="card__title"/>
+                    <p th:text="'Состояние : ' + ${car.isOnRoad() == true ? 'В дороге' : 'Свободна'}" class="card__subject"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

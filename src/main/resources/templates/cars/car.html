@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="../../static/css/form.css" th:href="@{/css/form.css}">
+<!--    <link rel="stylesheet" type="text/css" media="all" href="../../static/css/car.css" th:href="@{/css/car.css}">-->
+    <link rel="stylesheet" type="text/css" media="all" href="../../static/css/button.css" th:href="@{/css/button.css}">
+<!--    <link rel="stylesheet" type="text/css" media="all" href="../../static/css/input.css" th:href="@{/css/input.css}">-->
+
+</head>
+<body>
+<div th:insert="blocks/header :: header"></div>
+
+<div class="registration" style="position: relative; left: 50%">
+    <div class="container_reg mt-5 pt-5">
+        <div th:insert="blocks/car :: car_info_old"></div>
+    </div>
+</div>
+
+</body>
+</html>
